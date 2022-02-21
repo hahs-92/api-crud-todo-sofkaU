@@ -19,7 +19,7 @@ public class TodoService {
         return iTodoRepository.findAll();
     }
 
-    public Optional<Todo> getById(String id) {
+    public Optional<Todo> getById(Long id) {
         return iTodoRepository.findById(id);
     }
 
@@ -27,11 +27,11 @@ public class TodoService {
         return iTodoRepository.save(todo);
     }
 
-    public void delete(String id) {
+    public void delete(Long id) {
         iTodoRepository.deleteById(id);
     }
 
-    public Todo update(String id, Todo todo) {
+    public Todo update(Long id, Todo todo) {
         return iTodoRepository.findById(id)
                 .map(t -> {
                     t.setName(todo.getName());
